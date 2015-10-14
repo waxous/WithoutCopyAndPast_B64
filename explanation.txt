@@ -3,3 +3,5 @@ Be carefull you only excute this with a linux, but for exemple you can execute t
 With this tool you can simulate your type keyboard.
 
 We use base64 because there is not so much different char and we can execute a program in base64. 
+
+to run test in your shell: python test.py
