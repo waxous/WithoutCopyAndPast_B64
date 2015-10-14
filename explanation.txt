@@ -4,4 +4,7 @@ With this tool you can simulate your type keyboard.
 
 We use base64 because there is not so much different char and we can execute a program in base64. 
 
-to run test in your shell: python test.py
+to run test in your shell please install python-xlib
+
+sudo apt-get install python-xlib
+python test.py
