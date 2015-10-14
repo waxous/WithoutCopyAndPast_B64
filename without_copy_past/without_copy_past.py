@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# clavier.py
-
 # From original pykey.py
 # pykey -- a Python version of crikey,
 # http://shallowsky.com/software/crikey
