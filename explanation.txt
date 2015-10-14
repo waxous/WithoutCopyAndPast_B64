@@ -1,3 +1,5 @@
+Be carefull you only excute this with a linux, but for exemple you can execute the tool on your linux and go on a VM windows
+
 With this tool you can simulate your type keyboard.
 
-We use base64 because there is not so much different char and we can execute a programme in base64. 
+We use base64 because there is not so much different char and we can execute a program in base64. 
