@@ -1,4 +1,0 @@
-abcdefghijklmnopqrstuvwxyz
-ABCDEFGHIJKLMNOPQRSTUVWXYZ
--_
-0123456789

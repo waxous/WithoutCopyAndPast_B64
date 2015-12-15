@@ -35,20 +35,19 @@
 # par exemple We Make Poem
 
 import subprocess
+import sys
 import unicodedata
 
 try:
     import Xlib.display
+    import Xlib.X
+    import Xlib.XK
+    import Xlib.protocol.event
+    import Xlib.ext.xtest
 except ImportError:
     print("You must install python-xlib")
-    print("sudo apt-get install python-xlib")
-    subprocess.call('sudo apt-get install python-xlib', shell=True)
+    sys.exit()
 
-import Xlib.display
-import Xlib.X
-import Xlib.XK
-import Xlib.protocol.event
-import Xlib.ext.xtest
 
 keys_FR = {
     u'0': ("0", 1),
@@ -201,7 +200,7 @@ class without_copy_past(object):
         if key_comp == 4:
             comp = "trema"
 
-        #self.print_control(caract, keycode, keysym, comp, keysymverif)
+        self.print_control(caract, keycode, keysym, comp, keysymverif)
         if keysym == 0:
             # Caractère non étudié
             print("{0} n'a pas été étudié".format(caract.encode('utf8')))
@@ -209,9 +208,7 @@ class without_copy_past(object):
         return keycode, key_comp, valid
 
     def print_control(self, caract, keycode, keysym, comp, keysymverif):
-        print("\n{0}: soit {1}, touche symbole {2} {4},\
-                touche complémentaire {3}".
-        format(caract.encode('utf8'), keycode, keysym, comp, keysymverif))
+        print "\n%s: keycode 0x%02x, keysym 0x%02x + %s"%(caract.encode('utf8'), keycode, keysym, comp)
 
     def simul_unicode(self, caract):
         '''Simulation d'un seul caractactère en unicode.'''
@@ -227,7 +224,6 @@ class without_copy_past(object):
     def apply_keycode(self, caract):
         '''C'est de l'unicode, j'applique le keycode.'''
         keycode, key_comp, valid = self.get_keycode(caract)
-
         if valid:
             # Touche simple
             if key_comp == 0:
