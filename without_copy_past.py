@@ -32,7 +32,6 @@
 #############################################################################
 #
 # Classe Clavier pour être utilisé dans d'autres scripts
-# par exemple We Make Poem
 
 import subprocess
 import sys
